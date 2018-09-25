@@ -9,6 +9,7 @@ import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service("sysRoleService")
@@ -77,7 +78,11 @@ public class SysRoleServiceImpl implements SysRoleService {
         if(sysRole == null){
             sysRole = new SysRole();
         }
-        return sysRoleMapper.selectByVo(sysRole);
+        List<SysRole> roles = sysRoleMapper.selectByVo(sysRole);
+        if(CollectionUtils.isNullOrEmptyStrict(roles)){
+            return new ArrayList<>();
+        }
+        return roles;
     }
 
     @Override

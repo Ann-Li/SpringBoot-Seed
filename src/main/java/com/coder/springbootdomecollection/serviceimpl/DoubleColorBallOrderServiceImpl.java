@@ -9,6 +9,7 @@ import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service("doubleColorBallOrderService")
@@ -35,7 +36,11 @@ public class DoubleColorBallOrderServiceImpl implements DoubleColorBallOrderServ
         if(doubleColorBallOrder == null){
             doubleColorBallOrder = new DoubleColorBallOrder();
         }
-        return doubleColorBallOrderMapper.selectByVo(doubleColorBallOrder);
+        List<DoubleColorBallOrder> doubleColorBallOrders = doubleColorBallOrderMapper.selectByVo(doubleColorBallOrder);
+        if(CollectionUtils.isNullOrEmptyStrict(doubleColorBallOrders)){
+            return new ArrayList<>();
+        }
+        return doubleColorBallOrders;
     }
 
     @Override

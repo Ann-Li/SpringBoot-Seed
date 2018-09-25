@@ -9,6 +9,7 @@ import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service("sysPermissionService")
@@ -34,7 +35,11 @@ public class SysPermissionServiceImpl implements SysPermissionService {
         if(sysPermission == null){
             sysPermission = new SysPermission();
         }
-        return sysPermissionMapper.selectByVo(sysPermission);
+        List<SysPermission> permissions = sysPermissionMapper.selectByVo(sysPermission);
+        if(CollectionUtils.isNullOrEmptyStrict(permissions)){
+            return new ArrayList<>();
+        }
+        return permissions;
     }
 
     @Override

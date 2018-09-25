@@ -9,6 +9,7 @@ import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service("doubleColorBallService")
@@ -60,7 +61,11 @@ public class DoubleColorBallServiceImpl implements DoubleColorBallService {
         if(doubleColorBall == null){
             doubleColorBall = new DoubleColorBall();
         }
-        return doubleColorBallMapper.selectByVo(doubleColorBall);
+        List<DoubleColorBall> doubleColorBalls = doubleColorBallMapper.selectByVo(doubleColorBall);
+        if(CollectionUtils.isNullOrEmptyStrict(doubleColorBalls)){
+            return new ArrayList<>();
+        }
+        return doubleColorBalls;
     }
 
     @Override

@@ -9,6 +9,7 @@ import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service("sysMenuService")
@@ -62,7 +63,11 @@ public class SysMenuServiceImpl implements SysMenuService {
 
     @Override
     public List<SysMenu> selectAll() {
-        return sysMenuMapper.selectAll();
+        List<SysMenu> menus = sysMenuMapper.selectAll();
+        if(CollectionUtils.isNullOrEmptyStrict(menus)){
+            return new ArrayList<>();
+        }
+        return menus;
     }
 
     @Override

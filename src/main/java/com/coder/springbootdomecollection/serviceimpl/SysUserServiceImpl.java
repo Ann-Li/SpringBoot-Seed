@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service("sysUserService")
@@ -39,7 +40,11 @@ public class SysUserServiceImpl implements SysUserService {
         if(sysUser == null){
             sysUser = new SysUser();
         }
-        return sysUserMapper.selectByVo(sysUser);
+        List<SysUser> users = sysUserMapper.selectByVo(sysUser);
+        if(CollectionUtils.isNullOrEmptyStrict(users)){
+            return new ArrayList<>();
+        }
+        return users;
     }
 
     @Override
