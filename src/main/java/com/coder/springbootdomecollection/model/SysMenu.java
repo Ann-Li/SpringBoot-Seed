@@ -21,6 +21,16 @@ public class SysMenu extends BaseModel implements Serializable {
 
     private List<SysMenu> childrenMenus;
 
+    private Boolean show = false;
+
+    public Boolean getShow(){
+        return this.show;
+    }
+
+    public void setShow(Boolean show){
+        this.show = show;
+    }
+
     public Integer getId() {
         return id;
     }

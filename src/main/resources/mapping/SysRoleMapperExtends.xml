@@ -5,8 +5,8 @@
   <resultMap id="BaseResultMap" type="com.coder.springbootdomecollection.model.SysRole" >
     <id column="rid" property="rid" jdbcType="INTEGER" />
     <result column="rname" property="rname" jdbcType="VARCHAR" />
-    <association column="rid" select="selectPermissionByPrimaryKey" property="sysPermissionList" fetchType="lazy" />
-    <association column="rid" select="selectMenusByPrimaryKey" property="sysMenuList" fetchType="lazy" />
+    <association column="rid" select="selectPermissionByPrimaryKey" property="sysPermissionList" />
+    <association column="rid" select="selectMenusByPrimaryKey" property="sysMenuList" />
   </resultMap>
 
 

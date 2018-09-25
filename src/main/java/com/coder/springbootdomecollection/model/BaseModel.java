@@ -17,16 +17,6 @@ public class BaseModel implements Serializable {
     @JSONField(serialize=false)
     private String where;
 
-    private Boolean show = false;
-
-    public Boolean getShow(){
-        return this.show;
-    }
-
-    public void setShow(Boolean show){
-        this.show = show;
-    }
-
     public String getWhere() {
         return where;
     }
