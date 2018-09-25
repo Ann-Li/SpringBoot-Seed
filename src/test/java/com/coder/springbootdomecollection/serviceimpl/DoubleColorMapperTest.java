@@ -17,41 +17,41 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 
-@RunWith(SpringRunner.class)
-@SpringBootTest
+//@RunWith(SpringRunner.class)
+//@SpringBootTest
 public class DoubleColorMapperTest {
 
-    @Autowired
-    private DoubleColorBallService doubleColorBallService;
-
-    @Autowired
-    private DoubleColorBallOrderService doubleColorBallOrderService;
-
-    @Test
-    public void order(){
-
-        List<DoubleColorBall> balls = doubleColorBallService.selectAll(new DoubleColorBall());
-        for(DoubleColorBall ball : balls){
-            int[] nums = new int[6];
-            nums[0] = ball.getRedball1();
-            nums[1] = ball.getRedball2();
-            nums[2] = ball.getRedball3();
-            nums[3] = ball.getRedball4();
-            nums[4] = ball.getRedball5();
-            nums[5] = ball.getRedball6();
-            Arrays.sort(nums);
-            DoubleColorBallOrder doubleColorBallOrder = new DoubleColorBallOrder();
-            doubleColorBallOrder.setId(ball.getId());
-            doubleColorBallOrder.setRedball1(nums[0]);
-            doubleColorBallOrder.setRedball2(nums[1]);
-            doubleColorBallOrder.setRedball3(nums[2]);
-            doubleColorBallOrder.setRedball4(nums[3]);
-            doubleColorBallOrder.setRedball5(nums[4]);
-            doubleColorBallOrder.setRedball6(nums[5]);
-            doubleColorBallOrder.setBlueball(ball.getBlueball());
-            doubleColorBallOrderService.save(doubleColorBallOrder);
-        }
-    }
+//    @Autowired
+//    private DoubleColorBallService doubleColorBallService;
+//
+//    @Autowired
+//    private DoubleColorBallOrderService doubleColorBallOrderService;
+//
+//    @Test
+//    public void order(){
+//
+//        List<DoubleColorBall> balls = doubleColorBallService.selectAll(new DoubleColorBall());
+//        for(DoubleColorBall ball : balls){
+//            int[] nums = new int[6];
+//            nums[0] = ball.getRedball1();
+//            nums[1] = ball.getRedball2();
+//            nums[2] = ball.getRedball3();
+//            nums[3] = ball.getRedball4();
+//            nums[4] = ball.getRedball5();
+//            nums[5] = ball.getRedball6();
+//            Arrays.sort(nums);
+//            DoubleColorBallOrder doubleColorBallOrder = new DoubleColorBallOrder();
+//            doubleColorBallOrder.setId(ball.getId());
+//            doubleColorBallOrder.setRedball1(nums[0]);
+//            doubleColorBallOrder.setRedball2(nums[1]);
+//            doubleColorBallOrder.setRedball3(nums[2]);
+//            doubleColorBallOrder.setRedball4(nums[3]);
+//            doubleColorBallOrder.setRedball5(nums[4]);
+//            doubleColorBallOrder.setRedball6(nums[5]);
+//            doubleColorBallOrder.setBlueball(ball.getBlueball());
+//            doubleColorBallOrderService.save(doubleColorBallOrder);
+//        }
+//    }
 
 
 }
