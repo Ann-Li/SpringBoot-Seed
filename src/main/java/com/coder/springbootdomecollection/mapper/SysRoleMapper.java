@@ -1,4 +1,6 @@
 package com.coder.springbootdomecollection.mapper;
+import com.coder.springbootdomecollection.model.SysMenu;
+import com.coder.springbootdomecollection.model.SysPermission;
 import com.coder.springbootdomecollection.model.SysRole;
 import com.coder.springbootdomecollection.model.SysUser;
 
@@ -27,5 +29,13 @@ public interface SysRoleMapper {
     SysRole selectByProperty(SysRole sysRole);
 
     int findCount(SysRole sysRole);
+
+    List<SysMenu> selectMenusByPrimaryKey(Integer id);
+
+    List<SysPermission> selectPermissionByPrimaryKey(Integer id);
+
+    List<SysMenu> selectOtherMenusByPrimaryKey(Integer id);
+
+    List<SysPermission> selectOtherPermissionByPrimaryKey(Integer id);
 
 }

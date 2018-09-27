@@ -133,13 +133,34 @@
       sys_role
     <include refid="WhereCase"></include>
   </select>
-
   <select id="findCount" resultType="java.lang.Integer" parameterType="com.coder.springbootdomecollection.model.SysRole">
     select
       count(rid)
     from
       sys_role
     <include refid="WhereCase"></include>
+  </select>
+  <select id="selectOtherPermissionByPrimaryKey" resultMap="com.coder.springbootdomecollection.mapper.SysPermissionMapper.BaseResultMap" parameterType="java.lang.Integer">
+    select
+    <include refid="Sys_Permission_Base_Column_List" />
+    from
+    sys_permission
+    inner join
+    role_permission
+    on
+    sys_permission.id != role_permission.pid
+    and
+    role_permission.rid = #{rid,jdbcType=INTEGER}
+  </select>
+  <select id="selectOtherMenusByPrimaryKey" resultMap="com.coder.springbootdomecollection.mapper.SysMenuMapper.BaseResultMap" parameterType="java.lang.Integer">
+    select <include refid="Sys_Menu_Base_Column_List" />
+    from sys_menu
+    inner join role_menu
+    on sys_menu.id != role_menu.menuid
+    and role_menu.roleid = #{rid,jdbcType=INTEGER}
+    where pid=0
+    order by
+    `order` asc
   </select>
 
   <!-- 级联查询 s -->

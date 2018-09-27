@@ -1,6 +1,8 @@
 package com.coder.springbootdomecollection.serviceimpl;
 
 import com.coder.springbootdomecollection.mapper.SysRoleMapper;
+import com.coder.springbootdomecollection.model.SysMenu;
+import com.coder.springbootdomecollection.model.SysPermission;
 import com.coder.springbootdomecollection.model.SysRole;
 import com.coder.springbootdomecollection.service.SysRoleService;
 import com.coder.util.CollectionUtils;
@@ -100,5 +102,25 @@ public class SysRoleServiceImpl implements SysRoleService {
     @Override
     public int findCount(SysRole sysRole) {
         return sysRoleMapper.findCount(sysRole);
+    }
+
+    @Override
+    public List<SysMenu> selectMenusByPrimaryKey(Integer id) {
+        return sysRoleMapper.selectMenusByPrimaryKey(id);
+    }
+
+    @Override
+    public List<SysPermission> selectPermissionByPrimaryKey(Integer id) {
+        return sysRoleMapper.selectPermissionByPrimaryKey(id);
+    }
+
+    @Override
+    public List<SysMenu> selectOtherMenusByPrimaryKey(Integer id) {
+        return sysRoleMapper.selectOtherMenusByPrimaryKey(id);
+    }
+
+    @Override
+    public List<SysPermission> selectOtherPermissionByPrimaryKey(Integer id) {
+        return sysRoleMapper.selectOtherPermissionByPrimaryKey(id);
     }
 }

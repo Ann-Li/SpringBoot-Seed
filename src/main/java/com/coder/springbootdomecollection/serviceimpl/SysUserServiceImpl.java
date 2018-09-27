@@ -1,6 +1,8 @@
 package com.coder.springbootdomecollection.serviceimpl;
 
 import com.coder.springbootdomecollection.mapper.SysUserMapper;
+import com.coder.springbootdomecollection.model.SysMenu;
+import com.coder.springbootdomecollection.model.SysRole;
 import com.coder.springbootdomecollection.model.SysUser;
 import com.coder.springbootdomecollection.repository.SysUserRepository;
 import com.coder.springbootdomecollection.service.SysUserService;
@@ -126,5 +128,15 @@ public class SysUserServiceImpl implements SysUserService {
     @Override
     public int findCount(SysUser sysUser) {
         return sysUserMapper.findCount(sysUser);
+    }
+
+    @Override
+    public List<SysRole> selectRoleByPrimaryKey(Integer id) {
+        return sysUserMapper.selectRoleByPrimaryKey(id);
+    }
+
+    @Override
+    public List<SysMenu> selectMenuByPrimaryKey(Integer id) {
+        return sysUserMapper.selectMenuByPrimaryKey(id);
     }
 }

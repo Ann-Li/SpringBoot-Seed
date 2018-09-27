@@ -1,5 +1,7 @@
 package com.coder.springbootdomecollection.service;
 
+import com.coder.springbootdomecollection.model.SysMenu;
+import com.coder.springbootdomecollection.model.SysRole;
 import com.coder.springbootdomecollection.model.SysUser;
 import com.github.pagehelper.PageInfo;
 
@@ -32,5 +34,9 @@ public interface SysUserService {
     int save(SysUser sysUser);
 
     int findCount(SysUser sysUser);
+
+    List<SysRole> selectRoleByPrimaryKey(Integer id);
+
+    List<SysMenu> selectMenuByPrimaryKey(Integer id);
 
 }
