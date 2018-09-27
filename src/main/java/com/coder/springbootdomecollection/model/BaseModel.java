@@ -4,9 +4,7 @@ import com.alibaba.fastjson.annotation.JSONField;
 
 import java.io.Serializable;
 
-public class BaseModel implements Serializable {
-
-    private static final long serialVersionUID = -2921870919538436571L;
+public class BaseModel {
 
     @JSONField(serialize=false)
     private String orderBy;
@@ -40,6 +38,5 @@ public class BaseModel implements Serializable {
     public void setOrderSequnce(String orderSequnce) {
         this.orderSequnce = orderSequnce;
     }
-
 
 }

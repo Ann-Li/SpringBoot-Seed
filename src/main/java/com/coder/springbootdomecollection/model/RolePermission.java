@@ -1,6 +1,10 @@
 package com.coder.springbootdomecollection.model;
 
-public class RolePermission {
+import java.io.Serializable;
+
+public class RolePermission implements Serializable {
+
+    private static final long serialVersionUID = 8406529315299707809L;
 
     private Integer rid;
 
