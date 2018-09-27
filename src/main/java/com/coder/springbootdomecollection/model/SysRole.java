@@ -13,7 +13,7 @@ public class SysRole extends BaseModel implements Serializable {
 
     private List<SysPermission> sysPermissionList;
 
-    public List<SysMenu> sysMenuList;
+    private List<SysMenu> sysMenuList;
 
     public List<SysPermission> getSysPermissionList() {
         return sysPermissionList;
