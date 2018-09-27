@@ -24,6 +24,8 @@
     <dubbo:service interface="com.coder.springbootdomecollection.service.SysMenuService" ref="sysMenuService" timeout="10000"/>
     <dubbo:service interface="com.coder.springbootdomecollection.service.DoubleColorBallService" ref="doubleColorBallService" timeout="10000"/>
     <dubbo:service interface="com.coder.springbootdomecollection.service.DoubleColorBallOrderService" ref="doubleColorBallOrderService" timeout="10000"/>
+    <dubbo:service interface="com.coder.springbootdomecollection.service.RoleMenuService" ref="roleMenuService" timeout="10000"/>
+    <dubbo:service interface="com.coder.springbootdomecollection.service.RolePermissionService" ref="rolePermissionService" timeout="10000"/>
 
     <!-- 和本地 bean 一样实现服务 -->
     <bean id="userService" class="com.coder.springbootdomecollection.serviceimpl.UserServiceImpl" />
@@ -35,5 +37,7 @@
     <bean id="sysMenuService" class="com.coder.springbootdomecollection.serviceimpl.SysMenuServiceImpl" />
     <bean id="doubleColorBallService" class="com.coder.springbootdomecollection.serviceimpl.DoubleColorBallServiceImpl" />
     <bean id="doubleColorBallOrderService" class="com.coder.springbootdomecollection.serviceimpl.DoubleColorBallOrderServiceImpl" />
+    <bean id="roleMenuService" class="com.coder.springbootdomecollection.serviceimpl.RoleMenuServiceImpl" />
+    <bean id="rolePermissionService" class="com.coder.springbootdomecollection.serviceimpl.RolePermissionServiceImpl" />
 
 </beans>
