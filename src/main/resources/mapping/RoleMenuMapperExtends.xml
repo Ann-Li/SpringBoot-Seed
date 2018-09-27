@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.coder.springbootdomecollection.mapper.RoleMenuMapper" >
+  <resultMap id="BaseResultMap" type="com.coder.springbootdomecollection.model.RoleMenu" >
+    <id column="roleid" property="roleid" jdbcType="INTEGER" />
+    <id column="menuid" property="menuid" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    roleid, menuid
+  </sql>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from role_menu
+    where roleid = #{roleid,jdbcType=INTEGER} and menuid = #{menuid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.coder.springbootdomecollection.model.RoleMenu" >
+    insert into role_menu (roleid, menuid)
+    values (#{roleid,jdbcType=INTEGER}, #{menuid,jdbcType=INTEGER})
+  </insert>
+</mapper>

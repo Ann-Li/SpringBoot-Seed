@@ -72,12 +72,20 @@
                <!--enableCountByExample="true" enableUpdateByExample="true"-->
                <!--enableDeleteByExample="true" enableSelectByExample="true"-->
                <!--selectByExampleQueryId="true"></table>-->
-        <!--<table tableName="role_menu" domainObjectName="RoleMenu"-->
+        <!--<table tableName="role_menu" domainObjectName="RoleMenuService"-->
                <!--enableCountByExample="true" enableUpdateByExample="true"-->
                <!--enableDeleteByExample="true" enableSelectByExample="true"-->
                <!--selectByExampleQueryId="true"></table>-->
 
-        <table tableName="doublecolorball_order" domainObjectName="DoubleColorBallOrder"
+        <!--<table tableName="doublecolorball_order" domainObjectName="DoubleColorBallOrder"-->
+               <!--enableCountByExample="false" enableUpdateByExample="false"-->
+               <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+               <!--selectByExampleQueryId="false"></table>-->
+        <table tableName="role_menu" domainObjectName="RoleMenu"
+        enableCountByExample="false" enableUpdateByExample="false"
+        enableDeleteByExample="false" enableSelectByExample="false"
+        selectByExampleQueryId="false"></table>
+        <table tableName="role_permission" domainObjectName="RolePermission"
                enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false"
                selectByExampleQueryId="false"></table>

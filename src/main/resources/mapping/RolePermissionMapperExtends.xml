@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.coder.springbootdomecollection.mapper.RolePermissionMapper" >
+  <resultMap id="BaseResultMap" type="com.coder.springbootdomecollection.model.RolePermission" >
+    <id column="rid" property="rid" jdbcType="INTEGER" />
+    <id column="pid" property="pid" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    rid, pid
+  </sql>
+  <delete id="deleteByPrimaryKey" parameterType="com.coder.springbootdomecollection.model.RolePermission" >
+    delete from role_permission
+    where rid = #{rid,jdbcType=INTEGER} and pid = #{pid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.coder.springbootdomecollection.model.RolePermission" >
+    insert into role_permission (rid, pid)
+    values (#{rid,jdbcType=INTEGER}, #{pid,jdbcType=INTEGER})
+  </insert>
+</mapper>
