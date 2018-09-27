@@ -171,21 +171,21 @@
       `order` asc
   </select>
   <select id="selectOtherPermissionByPrimaryKey" resultMap="com.coder.springbootdomecollection.mapper.SysPermissionMapper.BaseResultMap" parameterType="java.lang.Integer">
-    select <include refid="Sys_Permission_Base_Column_List" />
-    from sys_permission
-    left join role_permission
-    on sys_permission.id != role_permission.pid
-    and role_permission.rid = #{rid,jdbcType=INTEGER}
-    order by sys_permission.id asc
+    SELECT <include refid="Sys_Permission_Base_Column_List" />
+    FROM sys_permission
+    LEFT JOIN role_permission ON sys_permission.id = role_permission.pid
+    AND role_permission.rid = #{rid,jdbcType=INTEGER}
+    WHERE role_permission.pid IS NULL
+    ORDER BY sys_permission.id ASC
   </select>
   <select id="selectOtherMenusByPrimaryKey" resultMap="com.coder.springbootdomecollection.mapper.SysMenuMapper.BaseResultMap" parameterType="java.lang.Integer">
-    select <include refid="Sys_Menu_Base_Column_List" />
-    from sys_menu
-    left join role_menu
-    on sys_menu.id != role_menu.menuid
-    and role_menu.roleid = #{rid,jdbcType=INTEGER}
-    where sys_menu.pid = 0
-    order by `order` asc
+    SELECT <include refid="Sys_Menu_Base_Column_List" />
+    FROM sys_menu
+    LEFT JOIN role_menu ON sys_menu.id = role_menu.menuid
+    AND role_menu.roleid = #{rid,jdbcType=INTEGER}
+    WHERE sys_menu.pid = 0
+    AND role_menu.menuid IS NULL
+    ORDER BY `order` ASC
   </select>
   <!-- 级联查询 e -->
 
