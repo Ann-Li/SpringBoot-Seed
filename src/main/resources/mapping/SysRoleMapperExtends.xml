@@ -171,16 +171,12 @@
       `order` asc
   </select>
   <select id="selectOtherPermissionByPrimaryKey" resultMap="com.coder.springbootdomecollection.mapper.SysPermissionMapper.BaseResultMap" parameterType="java.lang.Integer">
-    select
-    <include refid="Sys_Permission_Base_Column_List" />
-    from
-    sys_permission
-    left join
-    role_permission
-    on
-    sys_permission.id != role_permission.pid
-    and
-    role_permission.rid = #{rid,jdbcType=INTEGER}
+    select <include refid="Sys_Permission_Base_Column_List" />
+    from sys_permission
+    left join role_permission
+    on sys_permission.id != role_permission.pid
+    and role_permission.rid = #{rid,jdbcType=INTEGER}
+    order by sys_permission.id asc
   </select>
   <select id="selectOtherMenusByPrimaryKey" resultMap="com.coder.springbootdomecollection.mapper.SysMenuMapper.BaseResultMap" parameterType="java.lang.Integer">
     select <include refid="Sys_Menu_Base_Column_List" />
@@ -188,9 +184,8 @@
     left join role_menu
     on sys_menu.id != role_menu.menuid
     and role_menu.roleid = #{rid,jdbcType=INTEGER}
-    where pid=0
-    order by
-    `order` asc
+    where sys_menu.pid = 0
+    order by `order` asc
   </select>
   <!-- 级联查询 e -->
 
