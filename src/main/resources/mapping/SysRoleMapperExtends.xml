@@ -5,8 +5,10 @@
   <resultMap id="BaseResultMap" type="com.coder.springbootdomecollection.model.SysRole" >
     <id column="rid" property="rid" jdbcType="INTEGER" />
     <result column="rname" property="rname" jdbcType="VARCHAR" />
-    <association column="rid" select="selectPermissionByPrimaryKey" property="sysPermissionList" />
     <association column="rid" select="selectMenusByPrimaryKey" property="sysMenuList" />
+    <association column="rid" select="selectPermissionByPrimaryKey" property="sysPermissionList" />
+    <association column="rid" select="selectOtherMenusByPrimaryKey" property="otherMenus" />
+    <association column="rid" select="selectOtherPermissionByPrimaryKey" property="otherPermissions" />
   </resultMap>
 
 

@@ -11,9 +11,29 @@ public class SysRole extends BaseModel implements Serializable {
 
     private String rname;
 
+    private List<SysMenu> sysMenuList;
+
     private List<SysPermission> sysPermissionList;
 
-    private List<SysMenu> sysMenuList;
+    private List<SysMenu> otherMenus;
+
+    private List<SysPermission> otherPermissions;
+
+    public List<SysMenu> getOtherMenus() {
+        return otherMenus;
+    }
+
+    public void setOtherMenus(List<SysMenu> otherMenus) {
+        this.otherMenus = otherMenus;
+    }
+
+    public List<SysPermission> getOtherPermissions() {
+        return otherPermissions;
+    }
+
+    public void setOtherPermissions(List<SysPermission> otherPermissions) {
+        this.otherPermissions = otherPermissions;
+    }
 
     public List<SysPermission> getSysPermissionList() {
         return sysPermissionList;
