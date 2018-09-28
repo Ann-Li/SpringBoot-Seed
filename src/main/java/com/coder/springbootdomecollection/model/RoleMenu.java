@@ -2,7 +2,7 @@ package com.coder.springbootdomecollection.model;
 
 import java.io.Serializable;
 
-public class RoleMenu implements Serializable {
+public class RoleMenu extends BaseModel implements Serializable {
 
     private static final long serialVersionUID = 5691130140690811801L;
 
