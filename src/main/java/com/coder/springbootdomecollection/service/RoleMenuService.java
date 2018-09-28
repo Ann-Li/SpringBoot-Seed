@@ -6,5 +6,7 @@ public interface RoleMenuService {
 
     int deleteByPrimaryKey(RoleMenu roleMenu);
 
+    int deleteByProperty(RoleMenu roleMenu);
+
     int insert(RoleMenu roleMenu);
 }

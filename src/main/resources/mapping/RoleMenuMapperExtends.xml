@@ -8,9 +8,26 @@
   <sql id="Base_Column_List" >
     roleid, menuid
   </sql>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+  <sql id="WhereCase">
+    <where>
+      <if test="roleid != null" >
+        and roleid = #{roleid,jdbcType=INTEGER}
+      </if>
+      <if test="menuid != null" >
+        and menuid = #{menuid,jdbcType=INTEGER}
+      </if>
+      <if test="where != null and where != ''" >
+        and ${where}
+      </if>
+    </where>
+  </sql>
+  <delete id="deleteByPrimaryKey" parameterType="com.coder.springbootdomecollection.model.RoleMenu" >
     delete from role_menu
     where roleid = #{roleid,jdbcType=INTEGER} and menuid = #{menuid,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByProperty" parameterType="com.coder.springbootdomecollection.model.RoleMenu" >
+    delete from role_menu
+    <include refid="WhereCase"></include>
   </delete>
   <insert id="insert" parameterType="com.coder.springbootdomecollection.model.RoleMenu" >
     insert into role_menu (roleid, menuid)

@@ -18,6 +18,11 @@ public class RolePermissionServiceImpl implements RolePermissionService {
     }
 
     @Override
+    public int deleteByProperty(RolePermission rolePermission) {
+        return rolePermissionMapper.deleteByProperty(rolePermission);
+    }
+
+    @Override
     public int insert(RolePermission rolePermission) {
         return rolePermissionMapper.insert(rolePermission);
     }

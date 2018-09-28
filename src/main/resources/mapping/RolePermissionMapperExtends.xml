@@ -8,9 +8,26 @@
   <sql id="Base_Column_List" >
     rid, pid
   </sql>
+  <sql id="WhereCase">
+    <where>
+      <if test="rid != null" >
+        and rid = #{rid,jdbcType=INTEGER}
+      </if>
+      <if test="pid != null" >
+        and pid = #{pid,jdbcType=INTEGER}
+      </if>
+      <if test="where != null and where != ''" >
+        and ${where}
+      </if>
+    </where>
+  </sql>
   <delete id="deleteByPrimaryKey" parameterType="com.coder.springbootdomecollection.model.RolePermission" >
     delete from role_permission
     where rid = #{rid,jdbcType=INTEGER} and pid = #{pid,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByProperty" parameterType="com.coder.springbootdomecollection.model.RolePermission" >
+    delete from role_permission
+    <include refid="WhereCase"></include>
   </delete>
   <insert id="insert" parameterType="com.coder.springbootdomecollection.model.RolePermission" >
     insert into role_permission (rid, pid)

@@ -18,6 +18,11 @@ public class RoleMenuServiceImpl implements RoleMenuService {
     }
 
     @Override
+    public int deleteByProperty(RoleMenu roleMenu) {
+        return roleMenuMapper.deleteByProperty(roleMenu);
+    }
+
+    @Override
     public int insert(RoleMenu roleMenu) {
         return roleMenuMapper.insert(roleMenu);
     }
